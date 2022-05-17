@@ -1,13 +1,9 @@
 // const express = require('express');
 
-const createTweetRouter = require('./createTweet.router.js');
-const readTweetRouter = require('./readTweetRouter.router.js');
-const deleteTweetRouter = require('./deleteTweetRouter.router');
+const tweetRouter = require('./tweet.router.js');
 
 function routerApi(app) {
-    app.use('/tweet/create', createTweetRouter);
-    app.use('/tweet/:id', readTweetRouter);
-    app.use('/tweet/:id/delete', deleteTweetRouter);
+    app.use('/tweet', tweetRouter);
 }
 
 module.exports = routerApi;
